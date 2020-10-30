@@ -1,6 +1,8 @@
 language: java
 jdk:
   - openjdk8
+  - openjdk11
+  - openjdk15
 cache:
   directories:
     - $HOME/.m2
@@ -22,5 +24,12 @@ script:
   - pdd --file=/dev/null --exclude=qulice-maven-plugin/src/it/**/*.java,qulice-checkstyle/src/test/resources/com/qulice/checkstyle/AtClauseOrder.java,qulice-checkstyle/src/main/resources/com/qulice/checkstyle/checks.xml,qulice-checkstyle/src/test/resources/**/*
   - est --dir=est --file=/dev/null
   - ./years.sh
-  - mvn clean install -Pqulice --errors
+# Run qulice profile only on Java 8
+# because previous qulice versions doesn't work on Java 11+.
+# This condition should be removed after the release of qulice with the changes from this PR
+  - if [ "$TRAVIS_JDK_VERSION" == "openjdk8" ] then
+      mvn clean install -Pqulice --errors;
+    else
+      mvn clean install --errors;
+    fi
   - set +e
