@@ -39,7 +39,7 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
   <packaging>jar</packaging>
   <name>qulice-findbugs</name>
   <properties>
-    <asm.version>5.0.3</asm.version>
+    <asm.version>8.0.1</asm.version>
   </properties>
   <dependencies>
     <dependency>
@@ -117,7 +117,7 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
     <dependency>
       <groupId>org.ow2.asm</groupId>
       <artifactId>asm-debug-all</artifactId>
-      <version>${asm.version}</version>
+      <version>5.0.4</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>

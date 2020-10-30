@@ -46,9 +46,9 @@ import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
 import org.hamcrest.TypeSafeMatcher;
 import org.hamcrest.collection.IsIterableContainingInOrder;
-import org.junit.Rule;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 /**
  * Test case for {@link CheckstyleValidator} class.
@@ -64,6 +64,7 @@ import org.junit.jupiter.api.Test;
         "PMD.TooManyMethods", "PMD.AvoidDuplicateLiterals", "PMD.GodClass"
     }
 )
+@ExtendWith(LicenseRule.class)
 public final class CheckstyleValidatorTest {
 
     /**
@@ -85,7 +86,6 @@ public final class CheckstyleValidatorTest {
      * License rule.
      * @checkstyle VisibilityModifierCheck (5 lines)
      */
-    @Rule
     public final LicenseRule rule = new LicenseRule();
 
     /**

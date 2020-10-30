@@ -35,15 +35,13 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import org.apache.commons.io.FileUtils;
 import org.cactoos.text.Joined;
-import org.junit.rules.TestRule;
-import org.junit.runner.Description;
-import org.junit.runners.model.Statement;
+import org.junit.jupiter.api.extension.Extension;
 
 /**
  * Builder of {@code LICENSE.txt} content.
  * @since 0.4
  */
-public final class LicenseRule implements TestRule {
+public final class LicenseRule implements Extension {
 
     /**
      * The text.
@@ -64,12 +62,6 @@ public final class LicenseRule implements TestRule {
      * Directory for package-info.java.
      */
     private File directory;
-
-    @Override
-    public Statement apply(final Statement statement,
-        final Description description) {
-        return statement;
-    }
 
     /**
      * Use this EOL.

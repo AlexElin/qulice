@@ -33,7 +33,7 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
   <parent>
     <groupId>com.jcabi</groupId>
     <artifactId>parent</artifactId>
-    <version>0.49.5</version>
+    <version>0.50.7</version>
   </parent>
   <groupId>com.qulice</groupId>
   <artifactId>qulice</artifactId>
